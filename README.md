@@ -85,6 +85,22 @@ pipeline {
                 sh ' git clone https://github.com/jgomezz/m6-sbp-c05-micro-user-service.git'
             }
         } // end 'Clone'
+
+        stage('Compile') {
+            steps {
+                dir('m6-sbp-c05-micro-user-service') {
+                    sh 'mvn clean compile'
+                }
+            }
+        } // end 'Compile'
+        
+        stage('Test') {
+            steps {
+                dir('m6-sbp-c05-micro-user-service') {
+                    sh 'mvn test'
+                }
+            }
+        } // end 'Compile'
     }
 }
   
@@ -95,3 +111,4 @@ pipeline {
 - Hacer clic en "Build Now"
 - Verificar que el pipeline se ejecute correctamente
 - Ver los logs de la ejecución
+

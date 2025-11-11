@@ -11,11 +11,16 @@ import java.util.List;
 
 
 @Service
-@AllArgsConstructor
+//@AllArgsConstructor
 public class UserService {
 
     private final UserRepository userRepository;
     private final UserMapper mapper;
+
+    public UserService(UserRepository userRepository, UserMapper mapper) {
+        this.userRepository = userRepository;
+        this.mapper = mapper;
+    }
 
 
     public User getUserById(Long id){
