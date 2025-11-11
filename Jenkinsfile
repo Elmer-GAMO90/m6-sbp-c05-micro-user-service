@@ -15,6 +15,20 @@ pipeline {
                         sh 'mvn clean compile'
                     }
                 }
+
+        stage('Test') {
+                    steps {
+                        echo 'Test the project'
+                        sh 'mvn test'
+                    }
+                }
+
+        stage('Package') {
+                    steps {
+                        echo 'Package the project'
+                        sh 'mvn package -DskipTests'
+                    }
+                }
     }
 
 }

@@ -85,7 +85,7 @@ pipeline {
                 sh ' git clone https://github.com/jgomezz/m6-sbp-c05-micro-user-service.git'
             }
         } // end 'Clone'
-
+        
         stage('Compile') {
             steps {
                 dir('m6-sbp-c05-micro-user-service') {
@@ -118,4 +118,43 @@ pipeline {
 ### Paso 1: Crear un nuevo pipeline y configurarlo 
 
 <img src="images/pipeline_scm.png" alt="Jenkins Pipeline SCM" width="600"/>
+
+### Paso 2: Crear el archivo Jenkinsfile en el repositorio GitHub
+```declarative
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'Get source code from repository'
+                checkout scm
+            }
+        }
+        stage('Compile') {
+            steps {
+                echo 'Compile the project'
+                sh 'mvn clean compile'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Test the project'
+                sh 'mvn test'
+            }
+        }
+        stage('Package') {
+            steps {
+                echo 'Package the project'
+                sh 'mvn package -DskipTests'
+            }
+        }
+
+    }
+
+}
+```
+
+### Paso 3: Ejecutar el pipeline
 
