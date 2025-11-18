@@ -36,4 +36,10 @@ public class UserService {
         return this.mapper.toDomain(entities);
 
     }
+    //Crear un usuario con sus respectivas pruebas
+    public UserEntity createUser(User user) {
+        UserEntity entity = mapper.toEntity(user);
+        entity = userRepository.save(entity);
+        return entity;
+    }
 }

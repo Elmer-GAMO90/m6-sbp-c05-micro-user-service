@@ -7,4 +7,5 @@ INSERT INTO users (name, email, phone, address) VALUES
 ('María García', 'maria.garcia@example.com', '+51-999-234-567', 'Calle Los Olivos 567, Miraflores'),
 ('Carlos López', 'carlos.lopez@example.com', '+51-999-345-678', 'Jr. Huancavelica 890, Lima Centro'),
 ('Ana Torres', 'ana.torres@example.com', '+51-999-456-789', 'Av. Javier Prado 2345, San Isidro'),
+('Luis Fernández', 'luis.fernandez@example.com', '+51-999-555-789', 'Av. Lima 2345, Surco'),
 ('Roberto Sánchez', 'roberto.sanchez@example.com', '+51-999-567-890', 'Calle Las Begonias 678, San Borja');
