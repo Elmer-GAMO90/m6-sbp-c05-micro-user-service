@@ -30,7 +30,7 @@ pipeline {
         stage('Docker build') {
                  steps {
                     echo 'Build Docker image'
-                    sh 'docker build -t user-service-jgm:1.0 .'
+                    sh 'docker build -t user-service-egs:1.0 .'
 
             }
         }
