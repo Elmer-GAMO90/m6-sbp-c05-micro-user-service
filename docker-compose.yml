@@ -50,7 +50,7 @@ services:
     image: user-service-egs:1.0
     container_name: user-service-dev
     ports:
-      - "9081:9081"
+      - "9081:8081"
     environment:
       - SPRING_APPLICATION_NAME=user-service
       - SPRING_PROFILES_ACTIVE=dev

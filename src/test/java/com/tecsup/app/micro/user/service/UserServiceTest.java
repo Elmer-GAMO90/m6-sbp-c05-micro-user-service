@@ -52,6 +52,7 @@ class UserServiceTest {
         assertEquals(ID, realUser.getId());
         assertEquals(NAME, realUser.getName());
         assertEquals(EMAIL, realUser.getEmail());
+        //COmment
     }
 
     @Test
